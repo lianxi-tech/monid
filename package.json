@@ -1,0 +1,29 @@
+{
+  "name": "monid",
+  "version": "1.0.0",
+  "description": "Monorepository holding libraries to integrate the \"monid\" DID-method.",
+  "main": "index.js",
+  "author": "route666@live.cn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lianxi-tech/monid/issues"
+  },
+  "homepage": "https://github.com/ilovelili/persol-did-method#readme",
+  "private": true,
+  "scripts": {
+    "install": "yarn workspaces run",
+    "prepare": "yarn prepare:resolver; yarn prepare:registry; yarn prepare:contract",
+    "prepare:resolver": "yarn --cwd './packages/monid-did-resolver' prepare",
+    "prepare:registry": "yarn --cwd './packages/monid-did-registry' prepare",
+    "prepare:contract": "yarn --cwd './packages/monid-registry-contract' prepare",
+    "prepare:driver": "yarn --cwd './packages/monid-did-driver' prepare",
+    "clean": "yarn workspaces run clean && rm -rf node_modules",
+    "test": "yarn workspaces run test"
+  },
+  "workspaces": [
+    "./packages/monid-did-resolver",
+    "./packages/monid-did-registry",
+    "./packages/monid-registry-contract",
+    "./packages/monid-did-driver"
+  ]
+}

@@ -12,18 +12,18 @@
   "private": true,
   "scripts": {
     "install": "yarn workspaces run",
-    "prepare": "yarn prepare:resolver; yarn prepare:registry; yarn prepare:contract",
-    "prepare:resolver": "yarn --cwd './packages/monid-did-resolver' prepare",
-    "prepare:registry": "yarn --cwd './packages/monid-did-registry' prepare",
+    "prepare": "yarn prepare:contract",
     "prepare:contract": "yarn --cwd './packages/monid-registry-contract' prepare",
     "prepare:driver": "yarn --cwd './packages/monid-did-driver' prepare",
     "clean": "yarn workspaces run clean && rm -rf node_modules",
-    "test": "yarn workspaces run test"
+    "test": "yarn workspaces run test",
+    "format": "prettier --write \"**/*.{js,ts,sol}\""
   },
   "workspaces": [
-    "./packages/monid-did-resolver",
-    "./packages/monid-did-registry",
-    "./packages/monid-registry-contract",
-    "./packages/monid-did-driver"
-  ]
+    "./packages/monid-registry-contract"
+  ],
+  "devDependencies": {
+    "prettier": "^2.2.0",
+    "prettier-plugin-solidity": "^1.0.0-beta.1"
+  }
 }

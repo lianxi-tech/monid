@@ -1,10 +1,17 @@
 {
   "name": "@monid/registry-contract",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "Smart contract for registering DID / DID Document mappings",
   "license": "MIT",
-  "main": "js",
-  "typings": "js",
+  "main": "build/src",
+  "types": "build/src",
+  "files": [
+    "build/src",
+    "build/types"
+  ],
+  "keywords": [
+    "decentralized identity"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:lianxi-tech/monid.git",
@@ -19,10 +26,6 @@
     "deploy:mainnet": "deploy.sh mainnet",
     "generate-types": "typechain --target=ethers-v5 'build/contracts/*.json'"
   },
-  "files": [
-    "js",
-    "build"
-  ],
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.2.0",
     "ethers": "^5.0.21"

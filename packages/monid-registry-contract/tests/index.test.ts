@@ -4,7 +4,7 @@ import chalk from 'chalk';
 import { ethers, Wallet } from 'ethers';
 import { startGanache, wallet, provider, deployContracts, ganacheUri } from './ganache';
 import Ganache from 'ganache-core';
-import RegistryContract from '../src/registry-contract';
+import RegistryContract from '../build/src';
 import data from './data';
 import { parseTransaction } from 'ethers/lib/utils';
 

@@ -12,7 +12,7 @@
   "private": true,
   "scripts": {
     "install": "yarn workspaces run",
-    "prepare": "yarn prepare:contract prepare:registry",
+    "prepare": "concurrently \"yarn prepare:contract\" \"yarn prepare:registry\" \"yarn prepare:resolver\"",
     "prepare:contract": "yarn --cwd './packages/monid-registry-contract' prepare",
     "prepare:registry": "yarn --cwd './packages/monid-did-registry' prepare",
     "prepare:resolver": "yarn --cwd './packages/monid-did-resolver' prepare",
@@ -23,9 +23,11 @@
   },
   "workspaces": [
     "./packages/monid-registry-contract",
-    "./packages/monid-did-registry"
+    "./packages/monid-did-registry",
+    "./packages/monid-did-resolver"
   ],
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "prettier": "^2.2.0",
     "prettier-plugin-solidity": "^1.0.0-beta.1"
   }

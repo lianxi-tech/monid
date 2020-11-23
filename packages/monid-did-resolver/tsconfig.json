@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "outDir": "build",
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  },  
+  "exclude": [
+    "build",
+    "tests",
+    "node_modules"
+  ]
+}

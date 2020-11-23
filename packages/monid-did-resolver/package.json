@@ -1,6 +1,6 @@
 {
   "name": "@monid/did-resolver",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Package to resolve MONiD identities",
   "license": "MIT",
   "main": "build",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@decentralized-identity/did-common-typescript": "^0.1.19",
-    "@monid/registry-contract": "^1.0.6",
+    "@monid/registry-contract": "^1.1.0",
     "cross-fetch": "^3.0.6"
   },
   "devDependencies": {

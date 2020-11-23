@@ -1,6 +1,6 @@
 {
   "name": "monid",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Monorepository holding libraries to integrate the \"monid\" DID-method.",
   "main": "index.js",
   "author": "route666@live.cn",
@@ -16,7 +16,6 @@
     "prepare:contract": "yarn --cwd './packages/monid-registry-contract' prepare",
     "prepare:registry": "yarn --cwd './packages/monid-did-registry' prepare",
     "prepare:resolver": "yarn --cwd './packages/monid-did-resolver' prepare",
-    "prepare:driver": "yarn --cwd './packages/monid-did-driver' prepare",
     "clean": "yarn workspaces run clean && rm -rf node_modules",
     "test": "yarn workspaces run test",
     "format": "prettier --write \"**/*.{js,ts,sol}\""
@@ -24,7 +23,8 @@
   "workspaces": [
     "./packages/monid-registry-contract",
     "./packages/monid-did-registry",
-    "./packages/monid-did-resolver"
+    "./packages/monid-did-resolver",
+    "./packages/monid-did-driver"
   ],
   "devDependencies": {
     "concurrently": "^5.3.0",

@@ -1,0 +1,38 @@
+{
+  "name": "@monid/did-driver",
+  "version": "1.0.6",
+  "description": "MONiD did driver",
+  "license": "MIT",
+  "main": "build",
+  "types": "build",
+  "files": [
+    "build"
+  ],
+  "keywords": [
+    "decentralized identity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lianxi-tech/monid.git",
+    "directory": "packages/monid-did-driver"
+  },
+  "scripts": {
+    "start": "ts-node index.ts",
+    "clean": "rm -rf js node_modules",
+    "server": "tsc && node build/index.js",
+    "test": "echo 'no test found'",
+    "docker:build": "docker build -t lianxitech/monid-did-driver ."
+  },
+  "dependencies": {
+    "did-resolver": "^2.1.1",
+    "@monid/did-resolver": "^1.1.0",
+    "koa": "^2.13.0",
+    "@koa/router": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.6",
+    "@types/koa__router": "^8.0.3",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
+  }
+}

@@ -40,7 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getPublicProfile = exports.getResolver = exports.monidIpfsHost = exports.monidRegistryContract = exports.infura = void 0;
-var monid_registry_contract_1 = __importDefault(require("../../monid-registry-contract"));
+var registry_contract_1 = __importDefault(require("@monid/registry-contract"));
 var ipfs_1 = require("./ipfs");
 exports.infura = 'https://rinkeby.infura.io/v3/15d4004b3d9d4eef90898b33ba6358c8';
 exports.monidRegistryContract = '0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160';
@@ -55,7 +55,7 @@ function getResolver(providerUri, contractAddress, ipfsHost) {
     if (providerUri === void 0) { providerUri = exports.infura; }
     if (contractAddress === void 0) { contractAddress = exports.monidRegistryContract; }
     if (ipfsHost === void 0) { ipfsHost = exports.monidIpfsHost; }
-    var registryContract = new monid_registry_contract_1.default(contractAddress, providerUri);
+    var registryContract = new registry_contract_1.default(contractAddress, providerUri);
     var ipfsAgent = new ipfs_1.IpfsStorageAgent(ipfsHost);
     /**
      * Given a `monid` DID, will attempt to fetch the corresponding DID Document according to the (`did:monid` method specification).

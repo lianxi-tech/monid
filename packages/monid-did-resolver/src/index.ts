@@ -1,5 +1,5 @@
 import { DIDDocument, ParsedDID, Resolver } from 'did-resolver';
-import RegistryContract from '../../monid-registry-contract';
+import RegistryContract from '@monid/registry-contract';
 import { IpfsStorageAgent } from './ipfs';
 
 export const infura = 'https://rinkeby.infura.io/v3/15d4004b3d9d4eef90898b33ba6358c8';

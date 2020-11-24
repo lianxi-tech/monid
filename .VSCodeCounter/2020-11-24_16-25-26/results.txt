@@ -1,0 +1,131 @@
+Date : 2020-11-24 16:25:26
+Directory : /home/min/Projects/monid
+Total : 76 files,  5737 codes, 649 comments, 280 blanks, all 6666 lines
+
+Languages
++--------------+------------+------------+------------+------------+------------+
+| language     | files      | code       | comment    | blank      | total      |
++--------------+------------+------------+------------+------------+------------+
+| JSON         |         13 |      3,739 |         34 |          2 |      3,775 |
+| JavaScript   |         20 |        971 |        202 |         24 |      1,197 |
+| TypeScript   |         33 |        940 |        405 |        207 |      1,552 |
+| Solidity     |          2 |         40 |          2 |         13 |         55 |
+| Markdown     |          6 |         35 |          0 |         26 |         61 |
+| Docker       |          1 |          8 |          4 |          5 |         17 |
+| Shell Script |          1 |          4 |          2 |          3 |          9 |
++--------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                         |         76 |      5,737 |        649 |        280 |      6,666 |
+| packages                                                                                                                  |         70 |      5,643 |        636 |        265 |      6,544 |
+| packages/monid-did-driver                                                                                                 |          8 |        179 |          8 |         17 |        204 |
+| packages/monid-did-driver/build                                                                                           |          2 |         80 |          2 |          2 |         84 |
+| packages/monid-did-registry                                                                                               |         15 |        506 |        302 |         39 |        847 |
+| packages/monid-did-registry/build                                                                                         |          6 |        307 |        201 |          6 |        514 |
+| packages/monid-did-registry/src                                                                                           |          3 |         90 |        100 |         19 |        209 |
+| packages/monid-did-registry/tests                                                                                         |          2 |         52 |          1 |         11 |         64 |
+| packages/monid-did-resolver                                                                                               |         15 |        449 |        161 |         39 |        649 |
+| packages/monid-did-resolver/build                                                                                         |          6 |        237 |        103 |          6 |        346 |
+| packages/monid-did-resolver/src                                                                                           |          3 |         56 |         55 |         15 |        126 |
+| packages/monid-did-resolver/tests                                                                                         |          2 |         93 |          3 |         11 |        107 |
+| packages/monid-registry-contract                                                                                          |         32 |      4,509 |        165 |        170 |      4,844 |
+| packages/monid-registry-contract/build                                                                                    |         12 |      3,846 |         85 |         10 |      3,941 |
+| packages/monid-registry-contract/build/contracts                                                                          |          2 |      3,464 |          0 |          0 |      3,464 |
+| packages/monid-registry-contract/build/src                                                                                |          4 |        159 |         79 |          4 |        242 |
+| packages/monid-registry-contract/build/types                                                                              |          6 |        223 |          6 |          6 |        235 |
+| packages/monid-registry-contract/build/types/ethers-contracts                                                             |          6 |        223 |          6 |          6 |        235 |
+| packages/monid-registry-contract/build/types/ethers-contracts/factories                                                   |          4 |        212 |          6 |          4 |        222 |
+| packages/monid-registry-contract/contracts                                                                                |          2 |         40 |          2 |         13 |         55 |
+| packages/monid-registry-contract/migrations                                                                               |          2 |         10 |          0 |          4 |         14 |
+| packages/monid-registry-contract/src                                                                                      |          2 |         78 |         39 |         13 |        130 |
+| packages/monid-registry-contract/tests                                                                                    |          3 |        115 |          1 |         23 |        139 |
+| packages/monid-registry-contract/types                                                                                    |          5 |        326 |         15 |         96 |        437 |
+| packages/monid-registry-contract/types/ethers-contracts                                                                   |          5 |        326 |         15 |         96 |        437 |
+| packages/monid-registry-contract/types/ethers-contracts/factories                                                         |          2 |        158 |          6 |         14 |        178 |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| filename                                                                                                                  | language     | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+
+| /home/min/Projects/monid/.prettierrc                                                                                      | JSON         |         37 |          0 |          0 |         37 |
+| /home/min/Projects/monid/README.md                                                                                        | Markdown     |         13 |          0 |         11 |         24 |
+| /home/min/Projects/monid/jest.config.js                                                                                   | JavaScript   |          8 |          0 |          1 |          9 |
+| /home/min/Projects/monid/monid-did-method-specification.md                                                                | Markdown     |          2 |          0 |          2 |          4 |
+| /home/min/Projects/monid/package.json                                                                                     | JSON         |         21 |         13 |          0 |         34 |
+| /home/min/Projects/monid/packages/monid-did-driver/Dockerfile                                                             | Docker       |          8 |          4 |          5 |         17 |
+| /home/min/Projects/monid/packages/monid-did-driver/README.md                                                              | Markdown     |          2 |          0 |          2 |          4 |
+| /home/min/Projects/monid/packages/monid-did-driver/build/index.d.ts                                                       | TypeScript   |          1 |          0 |          1 |          2 |
+| /home/min/Projects/monid/packages/monid-did-driver/build/index.js                                                         | JavaScript   |         79 |          2 |          1 |         82 |
+| /home/min/Projects/monid/packages/monid-did-driver/index.ts                                                               | TypeScript   |         27 |          2 |          7 |         36 |
+| /home/min/Projects/monid/packages/monid-did-driver/jest.config.js                                                         | JavaScript   |          1 |          0 |          1 |          2 |
+| /home/min/Projects/monid/packages/monid-did-driver/package.json                                                           | JSON         |         38 |          0 |          0 |         38 |
+| /home/min/Projects/monid/packages/monid-did-driver/tsconfig.json                                                          | JSON         |         23 |          0 |          0 |         23 |
+| /home/min/Projects/monid/packages/monid-did-registry/README.md                                                            | Markdown     |          3 |          0 |          2 |          5 |
+| /home/min/Projects/monid/packages/monid-did-registry/build/index.d.ts                                                     | TypeScript   |         17 |         53 |          1 |         71 |
+| /home/min/Projects/monid/packages/monid-did-registry/build/index.js                                                       | JavaScript   |        102 |         52 |          1 |        155 |
+| /home/min/Projects/monid/packages/monid-did-registry/build/ipfs.d.ts                                                      | TypeScript   |          8 |         30 |          1 |         39 |
+| /home/min/Projects/monid/packages/monid-did-registry/build/ipfs.js                                                        | JavaScript   |         90 |         30 |          1 |        121 |
+| /home/min/Projects/monid/packages/monid-did-registry/build/utils.d.ts                                                     | TypeScript   |          6 |         18 |          1 |         25 |
+| /home/min/Projects/monid/packages/monid-did-registry/build/utils.js                                                       | JavaScript   |         84 |         18 |          1 |        103 |
+| /home/min/Projects/monid/packages/monid-did-registry/jest.config.js                                                       | JavaScript   |          1 |          0 |          1 |          2 |
+| /home/min/Projects/monid/packages/monid-did-registry/package.json                                                         | JSON         |         40 |          0 |          0 |         40 |
+| /home/min/Projects/monid/packages/monid-did-registry/src/index.ts                                                         | TypeScript   |         37 |         52 |          7 |         96 |
+| /home/min/Projects/monid/packages/monid-did-registry/src/ipfs.ts                                                          | TypeScript   |         24 |         30 |          7 |         61 |
+| /home/min/Projects/monid/packages/monid-did-registry/src/utils.ts                                                         | TypeScript   |         29 |         18 |          5 |         52 |
+| /home/min/Projects/monid/packages/monid-did-registry/tests/index.test.ts                                                  | TypeScript   |         37 |          1 |          7 |         45 |
+| /home/min/Projects/monid/packages/monid-did-registry/tests/testdata.ts                                                    | TypeScript   |         15 |          0 |          4 |         19 |
+| /home/min/Projects/monid/packages/monid-did-registry/tsconfig.json                                                        | JSON         |         13 |          0 |          0 |         13 |
+| /home/min/Projects/monid/packages/monid-did-resolver/README.md                                                            | Markdown     |         12 |          0 |          6 |         18 |
+| /home/min/Projects/monid/packages/monid-did-resolver/build/index.d.ts                                                     | TypeScript   |          8 |         16 |          1 |         25 |
+| /home/min/Projects/monid/packages/monid-did-resolver/build/index.js                                                       | JavaScript   |         93 |         23 |          1 |        117 |
+| /home/min/Projects/monid/packages/monid-did-resolver/build/ipfs.d.ts                                                      | TypeScript   |          7 |         23 |          1 |         31 |
+| /home/min/Projects/monid/packages/monid-did-resolver/build/ipfs.js                                                        | JavaScript   |         70 |         23 |          1 |         94 |
+| /home/min/Projects/monid/packages/monid-did-resolver/build/utils.d.ts                                                     | TypeScript   |          3 |          9 |          1 |         13 |
+| /home/min/Projects/monid/packages/monid-did-resolver/build/utils.js                                                       | JavaScript   |         56 |          9 |          1 |         66 |
+| /home/min/Projects/monid/packages/monid-did-resolver/jest.config.js                                                       | JavaScript   |          1 |          0 |          1 |          2 |
+| /home/min/Projects/monid/packages/monid-did-resolver/package.json                                                         | JSON         |         37 |          0 |          0 |         37 |
+| /home/min/Projects/monid/packages/monid-did-resolver/src/index.ts                                                         | TypeScript   |         34 |         23 |          7 |         64 |
+| /home/min/Projects/monid/packages/monid-did-resolver/src/ipfs.ts                                                          | TypeScript   |         16 |         23 |          6 |         45 |
+| /home/min/Projects/monid/packages/monid-did-resolver/src/utils.ts                                                         | TypeScript   |          6 |          9 |          2 |         17 |
+| /home/min/Projects/monid/packages/monid-did-resolver/tests/index.test.ts                                                  | TypeScript   |         44 |          3 |          8 |         55 |
+| /home/min/Projects/monid/packages/monid-did-resolver/tests/testdata.ts                                                    | TypeScript   |         49 |          0 |          3 |         52 |
+| /home/min/Projects/monid/packages/monid-did-resolver/tsconfig.json                                                        | JSON         |         13 |          0 |          0 |         13 |
+| /home/min/Projects/monid/packages/monid-registry-contract/README.md                                                       | Markdown     |          3 |          0 |          3 |          6 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/contracts/Migrations.json                                 | JSON         |      1,355 |          0 |          0 |      1,355 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/contracts/Registry.json                                   | JSON         |      2,109 |          0 |          0 |      2,109 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/src/index.d.ts                                            | TypeScript   |         21 |         40 |          1 |         62 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/src/index.js                                              | JavaScript   |        113 |         39 |          1 |        153 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/src/utils.d.ts                                            | TypeScript   |          4 |          0 |          1 |          5 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/src/utils.js                                              | JavaScript   |         21 |          0 |          1 |         22 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/types/ethers-contracts/factories/Migrations__factory.d.ts | TypeScript   |         12 |          0 |          1 |         13 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/types/ethers-contracts/factories/Migrations__factory.js   | JavaScript   |        102 |          3 |          1 |        106 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/types/ethers-contracts/factories/Registry__factory.d.ts   | TypeScript   |         12 |          0 |          1 |         13 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/types/ethers-contracts/factories/Registry__factory.js     | JavaScript   |         86 |          3 |          1 |         90 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/types/ethers-contracts/index.d.ts                         | TypeScript   |          4 |          0 |          1 |          5 |
+| /home/min/Projects/monid/packages/monid-registry-contract/build/types/ethers-contracts/index.js                           | JavaScript   |          7 |          0 |          1 |          8 |
+| /home/min/Projects/monid/packages/monid-registry-contract/contracts/Migrations.sol                                        | Solidity     |         18 |          1 |          6 |         25 |
+| /home/min/Projects/monid/packages/monid-registry-contract/contracts/Registry.sol                                          | Solidity     |         22 |          1 |          7 |         30 |
+| /home/min/Projects/monid/packages/monid-registry-contract/deploy.sh                                                       | Shell Script |          4 |          2 |          3 |          9 |
+| /home/min/Projects/monid/packages/monid-registry-contract/jest.config.js                                                  | JavaScript   |          1 |          0 |          1 |          2 |
+| /home/min/Projects/monid/packages/monid-registry-contract/migrations/1_initial_migration.js                               | JavaScript   |          4 |          0 |          2 |          6 |
+| /home/min/Projects/monid/packages/monid-registry-contract/migrations/2_deploy_registry.js                                 | JavaScript   |          6 |          0 |          2 |          8 |
+| /home/min/Projects/monid/packages/monid-registry-contract/package.json                                                    | JSON         |         27 |         21 |          0 |         48 |
+| /home/min/Projects/monid/packages/monid-registry-contract/src/index.ts                                                    | TypeScript   |         65 |         39 |         11 |        115 |
+| /home/min/Projects/monid/packages/monid-registry-contract/src/utils.ts                                                    | TypeScript   |         13 |          0 |          2 |         15 |
+| /home/min/Projects/monid/packages/monid-registry-contract/tests/data.ts                                                   | TypeScript   |          6 |          0 |          1 |          7 |
+| /home/min/Projects/monid/packages/monid-registry-contract/tests/ganache.ts                                                | TypeScript   |         31 |          1 |          8 |         40 |
+| /home/min/Projects/monid/packages/monid-registry-contract/tests/index.test.ts                                             | TypeScript   |         78 |          0 |         14 |         92 |
+| /home/min/Projects/monid/packages/monid-registry-contract/truffle-config.js                                               | JavaScript   |         46 |          0 |          3 |         49 |
+| /home/min/Projects/monid/packages/monid-registry-contract/tsconfig.json                                                   | JSON         |         13 |          0 |          1 |         14 |
+| /home/min/Projects/monid/packages/monid-registry-contract/types/ethers-contracts/Migrations.d.ts                          | TypeScript   |         98 |          3 |         50 |        151 |
+| /home/min/Projects/monid/packages/monid-registry-contract/types/ethers-contracts/Registry.d.ts                            | TypeScript   |         66 |          3 |         30 |         99 |
+| /home/min/Projects/monid/packages/monid-registry-contract/types/ethers-contracts/factories/Migrations__factory.ts         | TypeScript   |         87 |          3 |          7 |         97 |
+| /home/min/Projects/monid/packages/monid-registry-contract/types/ethers-contracts/factories/Registry__factory.ts           | TypeScript   |         71 |          3 |          7 |         81 |
+| /home/min/Projects/monid/packages/monid-registry-contract/types/ethers-contracts/index.ts                                 | TypeScript   |          4 |          3 |          2 |          9 |
+| /home/min/Projects/monid/tsconfig.json                                                                                    | JSON         |         13 |          0 |          1 |         14 |
+| Total                                                                                                                     |              |      5,737 |        649 |        280 |      6,666 |
++---------------------------------------------------------------------------------------------------------------------------+--------------+------------+------------+------------+------------+

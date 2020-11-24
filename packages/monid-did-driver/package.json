@@ -24,10 +24,10 @@
     "docker:build": "docker build -t lianxitech/monid-did-driver ."
   },
   "dependencies": {
-    "did-resolver": "^2.1.1",
+    "@koa/router": "^10.0.0",
     "@monid/did-resolver": "^1.1.0",
-    "koa": "^2.13.0",
-    "@koa/router": "^10.0.0"
+    "did-resolver": "^2.1.1",
+    "koa": "^2.13.0"
   },
   "devDependencies": {
     "@types/koa": "^2.11.6",

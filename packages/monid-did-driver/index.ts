@@ -15,6 +15,7 @@ router.get('/', (ctx) => {
 router.get('/1.0/identifiers/:did', async (ctx) => {
   const did = ctx.params.did;
   if (!verifyDIDFormat(did)) {
+    ctx.body = 'Invalid did';
     ctx.status = 400;
     return;
   }

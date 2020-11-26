@@ -6,4 +6,6 @@ js
 
 coverage
 
+.VSCodeCounter
+
 .env

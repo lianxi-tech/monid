@@ -2,7 +2,7 @@
   "name": "@monid/registry-contract",
   "version": "1.1.0",
   "description": "Smart contract for registering DID / DID Document mappings",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "main": "build/src",
   "types": "build/src",
   "files": [

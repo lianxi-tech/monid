@@ -4,7 +4,7 @@
   "description": "Monorepository holding libraries to integrate the \"monid\" DID-method.",
   "main": "index.js",
   "author": "route666@live.cn",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/lianxi-tech/monid/issues"
   },

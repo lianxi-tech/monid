@@ -8,9 +8,9 @@ The [packages](./packages/) directory contains the following modules:
 
 - [monid-registry-contract](./packages/registry-contract): Wrapper for deploying / interacting with an instance of the Monid registry Ethereum smart contract.
 
-Both the resolver and the registrar can be configured to use a custom registry contract address (the default address is the [Monid registry contract](https://rinkeby.etherscan.io/address/0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160#code)\).
+Both the resolver and the registry can be configured to use a custom registry contract address (the default address is the [Monid registry contract](https://rinkeby.etherscan.io/address/0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160#code)\).
 
-- [monid-did-registrar](./packages/monid-did-registrar): Module implementing the logic for anchoring and updating MONiD Identities using an "Registry" Ethereum smart contract and IPFS.
+- [monid-did-registry](./packages/monid-did-registry): Module implementing the logic for anchoring and updating MONiD Identities using an "Registry" Ethereum smart contract and IPFS.
   Relies on the `registry-contract` module for assembling / broadcasting Ethereum transactions.
 
 - [monid-did-resolver](./packages/monid-did-resolver): Module implementing the logic for resolving monidcom Identities using an instance of the MONiD Registry contract and IPFS.

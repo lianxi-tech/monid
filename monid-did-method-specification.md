@@ -13,18 +13,18 @@ The MONiD DID method uses IPFS as a decentralized data storage for DID Documents
 ```js
 {
   '@context': 'https://w3id.org/did/v1',
-  id: 'did:monid:1fb352353ff51248c5104b407f9c04c3666627fcf5a167d693c9fc84b75964e2',
+  id: 'did:monid:85540cd700a8c3e37265072f2b35e3de4c3b35721e7fb02d146146262fdc8089',
   publicKey: [
     {
-      id: `did:monid:1fb352353ff51248c5104b407f9c04c3666627fcf5a167d693c9fc84b75964e2#keys-1`,
-      controller: 'did:monid:1fb352353ff51248c5104b407f9c04c3666627fcf5a167d693c9fc84b75964e2',
+      id: `did:monid:85540cd700a8c3e37265072f2b35e3de4c3b35721e7fb02d146146262fdc8089#keys-1`,
+      controller: 'did:monid:85540cd700a8c3e37265072f2b35e3de4c3b35721e7fb02d146146262fdc8089',
       publicKeyHex: '0298a5f231fc9224ca466bdbd0b27cb34d27939d0e8aa4b65ba4ef1ed805f14975',
       type: 'Secp256k1VerificationKey2018',
     },
   ],
   service: [
     {
-      id: `did:monid:1fb352353ff51248c5104b407f9c04c3666627fcf5a167d693c9fc84b75964e2`,
+      id: `did:monid:85540cd700a8c3e37265072f2b35e3de4c3b35721e7fb02d146146262fdc8089`,
       type: 'MONiDPublicProfile',
       serviceEndpoint: 'https://ipfs.monid.io/QmdBfKM9YQrtX5V4FvYhEVju8VsVE5488ufcJ9rWWgD892',
     },
@@ -87,3 +87,7 @@ MONiD updates the DID document by simply using the `setRecord` smart contract fu
 ### DID Document Deletion
 
 Deletion is archived by updating the registry to return an all-0 byte string
+
+## Contact
+
+route666@live.cn

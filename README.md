@@ -6,7 +6,7 @@
 
 The MONiD DID method aims to implement Decentralized Identifier [did-core](https://www.w3.org/TR/did-core/) architecture in a secure, robust and flexible way. It's core technologies are bulit on Ethereum blockchain and the Interplanetary File System (IPFS).
 
-## Overview
+## <a id="overview"></a>Overview
 
 The MONiD DID method uses IPFS as verifiable data registry for DID Documents. The DID Document format is like:
 
@@ -60,7 +60,7 @@ Wrapper for deploying / interacting with an instance of the MONiD registry Ether
 
 MONiD DIDs are identifiable by `did:monid:` which are compatible with the W3C DID core [method scheme specification](https://w3c.github.io/did-core/#method-schemes)
 
-### Key Management
+### <a id="key"></a>Key Management
 
 MONiD intergrates with [Torus Network](https://tor.us/), which is a decentralized key management service built on Ethereum blockchain, to provide a better user experience with high security and flexibility. A user’s private keys are splited into shares across a Torus network of nodes, and Torus allows a user to retrieve this using natural login mechanisms like social authentication. Meanwhile, Tours nodes have managed volumes and snapshot policies to ensure that key shares will never get lost.
 
@@ -84,6 +84,20 @@ MONiD queries the registry smart contract's [getRecord](https://rinkeby.ethersca
 
 MONiD updates the DID document by simply using the [setRecord](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) smart contract function with the same DID and a new IPFS hash of the updated DID Document
 
-### DID Document Deletion
+### DID Document Deactivate
 
 Deletion is archived by updating the registry to return an all-0 byte string
+
+## Privacy and Security Considerations
+
+### Key Control
+
+As mentioned in [Key Management](#key) section, MONiD intergrates with Torus, which provides a universal key management solution. So methods for key generation, recovery and revocation are outside the scope of MONiD architecture. On the other hand, it reduces the key management risk for MONiD and its users.
+
+### MONiDPublicProfile Service Type
+
+MONiD defines `MONiDPublicProfile` type in service property, just as the [DID document example](#overview) shows. As registered DIDs can be resolved by anyone, care must be taken to only update the registry to resolve to DID Documents which DO NOT expose any sensitive personal information.
+
+### IPFS As Verifiable Data Registry
+
+DID Document data is immutable once it’s on IPFS. Thus no entity can change the document that a DID resolves to via the registry smart contract unless they control the private key which registered it.

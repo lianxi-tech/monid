@@ -1,23 +1,89 @@
-# MONiD
+# MONiD DID Method Specification
 
-Monorepository holding libraries to integrate the "monid" DID-method, which is an decentrailzed identity implementations based on Ethereum / IPFS.
+[LianXi-Tech](https://lianxi-tech.com), Dec/03/2020, V1.0.0
 
-## Contents
+## Abstract
 
-The [packages](./packages/) directory contains the following modules:
+The MONiD DID method aims to implement Decentralized Identifier [did-core](https://www.w3.org/TR/did-core/) architecture in a secure, robust and flexible way. It's core technologies are bulit on Ethereum blockchain and the Interplanetary File System (IPFS).
 
-- [monid-registry-contract](./packages/registry-contract): Wrapper for deploying / interacting with an instance of the Monid registry Ethereum smart contract.
+## Overview
 
-Both the resolver and the registry can be configured to use a custom registry contract address (the default address is the [Monid registry contract](https://rinkeby.etherscan.io/address/0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160#code)\).
+The MONiD DID method uses IPFS as verifiable data registry for DID Documents. The DID Document format is like:
 
-- [monid-did-registry](./packages/monid-did-registry): Module implementing the logic for anchoring and updating MONiD Identities using an "Registry" Ethereum smart contract and IPFS.
-  Relies on the `registry-contract` module for assembling / broadcasting Ethereum transactions.
+```js
+{
+  '@context': 'https://w3id.org/did/v1',
+  id: 'did:monid:85540cd700a8c3e37265072f2b35e3de4c3b35721e7fb02d146146262fdc8089',
+  publicKey: [
+    {
+      id: `did:monid:85540cd700a8c3e37265072f2b35e3de4c3b35721e7fb02d146146262fdc8089#keys-1`,
+      controller: 'did:monid:85540cd700a8c3e37265072f2b35e3de4c3b35721e7fb02d146146262fdc8089',
+      publicKeyHex: '0298a5f231fc9224ca466bdbd0b27cb34d27939d0e8aa4b65ba4ef1ed805f14975',
+      type: 'Secp256k1VerificationKey2018',
+    },
+  ],
+  service: [
+    {
+      id: `did:monid:85540cd700a8c3e37265072f2b35e3de4c3b35721e7fb02d146146262fdc8089`,
+      type: 'MONiDPublicProfile',
+      serviceEndpoint: 'https://ipfs.monid.io/QmdBfKM9YQrtX5V4FvYhEVju8VsVE5488ufcJ9rWWgD892',
+    },
+  ],
+}
+```
 
-- [monid-did-resolver](./packages/monid-did-resolver): Module implementing the logic for resolving monidcom Identities using an instance of the MONiD Registry contract and IPFS.
-  The module is compatible with the interface required by the [DIF DID-Resolver](https://github.com/decentralized-identity/did-resolver) package.
+On the Ethereum side, a [registry smart contract](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) provides a mapping from a DID to an IPFS hash address of the corrosponding DID Document. Given a DID, MONiD did resolver module can the retrieve the DID Document from IPFS.
 
-- [monid-did-driver](./packages/monid-did-driver): `did:monid` integration for the [DIF Universal Resolver](https://github.com/decentralized-identity/universal-resolver).
+## Overall Architecture
 
-## Contact
+![Architecture](./images/Architecture.png)
 
-route666@live.cn
+### @monid/did-driver
+
+RESTful API server to wrap the main DID operations
+
+### @monid/did-resolver
+
+DID resolver module compatible with Decentralized Identifier [did-resolver](https://github.com/decentralized-identity/did-resolver) specification
+
+### @monid/did-registry
+
+DID registry module writing DID document into IPFS and calls the registry smart contract [setRecord](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) function to map the DID with the IPFS hash address
+
+### @monid/registry-contract
+
+Wrapper for deploying / interacting with an instance of the MONiD registry Ethereum smart contract
+
+## Specification
+
+### DID Method Format
+
+MONiD DIDs are identifiable by `did:monid:` which are compatible with the W3C DID core [method scheme specification](https://w3c.github.io/did-core/#method-schemes)
+
+### Key Management
+
+MONiD intergrates with [Torus Network](https://tor.us/), which is a decentralized key management service built on Ethereum blockchain, to provide a better user experience with high security and flexibility. A user’s private keys are splited into shares across a Torus network of nodes, and Torus allows a user to retrieve this using natural login mechanisms like social authentication. Meanwhile, Tours nodes have managed volumes and snapshot policies to ensure that key shares will never get lost.
+
+### DID Creation
+
+There are 3 steps for MONiD to generate a new DID
+
+- Retreives user public key from Torus Network
+- Takes the keccak256 hash of the public key
+- Generates MONiD DID in `did:monid:{{public key hash}}` format
+
+### DID Registration
+
+MONiD creates the mapping from DID to IPFS address hash on the smart contract using the [setRecord](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) function, making its DID Document accessable with only the corresponding DID
+
+### DID Document Resolution
+
+MONiD queries the registry smart contract's [getRecord](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) function with a DID to resolve the DID document. The IPFS address can then be resolved and MONiD sends the IPFS address to [MONiD IPFS Gateway](https://ipfs.monid.io/) to retrieve the corresponding DID Document
+
+### DID Document Updating
+
+MONiD updates the DID document by simply using the [setRecord](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) smart contract function with the same DID and a new IPFS hash of the updated DID Document
+
+### DID Document Deletion
+
+Deletion is archived by updating the registry to return an all-0 byte string

@@ -1,6 +1,6 @@
 # MONiD DID Method Specification
 
-[LianXi-Tech](https://lianxi-tech.com), Dec/03/2020, V1
+[LianXi-Tech](https://lianxi-tech.com), Dec/03/2020, V1.0.0
 
 ## Abstract
 
@@ -32,7 +32,7 @@ The MONiD DID method uses IPFS as verifiable data registry for DID Documents. Th
 }
 ```
 
-On the Ethereum side, a [registry smart contract](https://github.com/lianxi-tech/monid/blob/master/packages/monid-registry-contract/contracts/Registry.sol) provides a mapping from a DID to an IPFS hash address of the corrosponding DID Document. Given a DID, MONiD did resolver module can the retrieve the DID Document from IPFS.
+On the Ethereum side, a [registry smart contract](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) provides a mapping from a DID to an IPFS hash address of the corrosponding DID Document. Given a DID, MONiD did resolver module can the retrieve the DID Document from IPFS.
 
 ## Overall Architecture
 
@@ -48,7 +48,7 @@ DID resolver module compatible with Decentralized Identifier [did-resolver](http
 
 ### @monid/did-registry
 
-DID registry module writing DID document into IPFS and calls the registry smart contract [setRecord](https://github.com/lianxi-tech/monid/blob/master/packages/monid-registry-contract/contracts/Registry.sol#L18) function to map the DID with the IPFS hash address
+DID registry module writing DID document into IPFS and calls the registry smart contract [setRecord](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) function to map the DID with the IPFS hash address
 
 ### @monid/registry-contract
 
@@ -74,15 +74,15 @@ There are 3 steps for MONiD to generate a new DID
 
 ### DID Registration
 
-MONiD creates the mapping from DID to IPFS address hash on the smart contract using the [setRecord](https://github.com/lianxi-tech/monid/blob/master/packages/monid-registry-contract/contracts/Registry.sol#L18) function, making its DID Document accessable with only the corresponding DID
+MONiD creates the mapping from DID to IPFS address hash on the smart contract using the [setRecord](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) function, making its DID Document accessable with only the corresponding DID
 
 ### DID Document Resolution
 
-MONiD queries the registry smart contract's [getRecord](https://github.com/lianxi-tech/monid/blob/master/packages/monid-registry-contract/contracts/Registry.sol#L26) function with a DID to resolve the DID document. The IPFS address can then be resolved and MONiD sends the IPFS address to [MONiD IPFS Gateway](https://ipfs.monid.io/) to retrieve the corresponding DID Document
+MONiD queries the registry smart contract's [getRecord](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) function with a DID to resolve the DID document. The IPFS address can then be resolved and MONiD sends the IPFS address to [MONiD IPFS Gateway](https://ipfs.monid.io/) to retrieve the corresponding DID Document
 
 ### DID Document Updating
 
-MONiD updates the DID document by simply using the `setRecord` smart contract function with the same DID and a new IPFS hash of the updated DID Document
+MONiD updates the DID document by simply using the [setRecord](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) smart contract function with the same DID and a new IPFS hash of the updated DID Document
 
 ### DID Document Deletion
 

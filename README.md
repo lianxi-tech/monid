@@ -4,7 +4,7 @@
 
 ## Abstract
 
-The MONiD DID method aims to implement Decentralized Identifier [did-core](https://www.w3.org/TR/did-core/) architecture in a secure, robust and flexible way. It's core technologies are bulit on Ethereum blockchain and the Interplanetary File System (IPFS).
+The MONiD DID method aims to implement Decentralized Identifier [did-core](https://www.w3.org/TR/did-core/) architecture in a secure, robust and flexible way. Its core technologies are bulit on Ethereum blockchain and the Interplanetary File System (IPFS).
 
 ## <a id="overview"></a>Overview
 
@@ -32,7 +32,7 @@ The MONiD DID method uses IPFS as verifiable data registry for DID Documents. Th
 }
 ```
 
-On the Ethereum side, a [registry smart contract](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) provides a mapping from a DID to an IPFS hash address of the corrosponding DID Document. Given a DID, MONiD did resolver module can the retrieve the DID Document from IPFS.
+On the Ethereum side, a [registry smart contract](https://rinkeby.etherscan.io/address/0x61f36db1849bc8f21f9a41a74b4f073d09e7f160#code) provides a mapping from a DID to an IPFS hash address of the corresponding DID Document. Given a DID, MONiD did-resolver module can retrieve the DID Document from IPFS.
 
 ## Overall Architecture
 
@@ -92,7 +92,7 @@ Deletion is archived by updating the registry to return an all-0 byte string
 
 ### Key Control
 
-As mentioned in [Key Management](#key) section, MONiD intergrates with Torus, which provides a universal key management solution. So methods for key generation, recovery and revocation are outside the scope of MONiD architecture. On the other hand, it reduces the key management risk for MONiD and its users.
+As mentioned in the [Key Management](#key) section, MONiD intergrates with Torus, which provides a universal key management solution. Hence the methods for key generation, recovery and revocation are out of the MONiD architecture scope. This integration, in turn, reduces the key management risk for MONiD and its users.
 
 ### MONiDPublicProfile Service Type
 

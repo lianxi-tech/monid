@@ -70,7 +70,7 @@ There are 3 steps for MONiD to generate a new DID
 
 - Retreives user public key from Torus Network
 - Takes the keccak256 hash of the public key
-- Generates MONiD DID in `did:monid:{{public key hash}}` format
+- Generates MONiD DID in `did:monid:public key hash` format
 
 ### DID Registration
 

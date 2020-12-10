@@ -4,7 +4,7 @@
 
 ## Abstract
 
-The MONiD DID method aims to implement Decentralized Identifier [did-core](https://www.w3.org/TR/did-core/) architecture in a secure, robust and flexible way. Its core technologies are bulit on Ethereum blockchain and the Interplanetary File System (IPFS).
+The MONiD DID method aims to implement Decentralized Identifier [did-core](https://www.w3.org/TR/did-core/) architecture in a secure, robust and flexible way. Its core technologies are built on Ethereum blockchain and the Interplanetary File System (IPFS).
 
 ## <a id="overview"></a>Overview
 

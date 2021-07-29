@@ -36,7 +36,7 @@ On the Ethereum side, a [registry smart contract](https://rinkeby.etherscan.io/a
 
 ## Overall Architecture
 
-![Architecture](./images/Architecture.png)
+![Architecture](https://cdn.woodstock.club/Architecture.png)
 
 ### @monid/did-driver
 

@@ -1,6 +1,6 @@
 {
   "name": "@monid/did-driver",
-  "version": "1.0.7",
+  "version": "2.0.1",
   "description": "MONiD did driver",
   "license": "Apache-2.0",
   "main": "build",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@koa/router": "^10.0.0",
-    "@monid/did-resolver": "^1.1.0",
+    "@monid/did-resolver": "^2.0.1",
     "did-resolver": "^2.1.1",
     "koa": "^2.13.0"
   },

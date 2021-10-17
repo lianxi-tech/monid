@@ -41,6 +41,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Utils = void 0;
 var cross_fetch_1 = __importDefault(require("cross-fetch"));
+require('dotenv').config();
+var ipfsProjectId = process.env.INFURA_IPFS_PROJECT_ID || '';
+var ipfsProjectSecret = process.env.INFURA_IPFS_PROJECT_SECRET || '';
+if (ipfsProjectId == '') {
+    console.error('must assign INFURA_IPFS_PROJECT_ID');
+    process.exit(1);
+}
+if (ipfsProjectSecret == '') {
+    console.error('must assign INFURA_IPFS_PROJECT_SECRET');
+    process.exit(1);
+}
 /**
  * @class
  * Class provides utility functions
@@ -56,7 +67,12 @@ var Utils = /** @class */ (function () {
     Utils.getRequest = function (endpoint) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, cross_fetch_1.default(endpoint)];
+                return [2 /*return*/, cross_fetch_1.default(endpoint, {
+                        method: 'GET',
+                        headers: {
+                            Authorization: 'Basic ' + Buffer.from(ipfsProjectId + ":" + ipfsProjectSecret, 'binary').toString('base64'),
+                        },
+                    })];
             });
         });
     };

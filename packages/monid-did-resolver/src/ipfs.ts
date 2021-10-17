@@ -1,4 +1,11 @@
 import { Utils } from './utils';
+require('dotenv').config();
+
+const ipfsHost = process.env.INFURA_IPFS_URI || '';
+if (ipfsHost == '') {
+  console.error('must assign INFURA_IPFS_URI');
+  process.exit(1);
+}
 
 /**
  * @class
@@ -41,4 +48,4 @@ export class IpfsStorageAgent {
  * Returns a configured instance of the MONiD ipfs agent
  * @return - Instantiated IPFS agent
  */
-export const monidIpfsStorageAgent = new IpfsStorageAgent('https://ipfs.monid.com:443');
+export const monidIpfsStorageAgent = new IpfsStorageAgent(ipfsHost);

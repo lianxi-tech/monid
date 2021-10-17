@@ -1,5 +1,5 @@
 import { DIDDocument, ParsedDID, Resolver } from 'did-resolver';
-export declare const infura: string;
+export declare const infuraUrl: string;
 export declare const monidRegistryContract: string;
 export declare const monidIpfsHost: string;
 /**

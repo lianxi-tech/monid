@@ -1,6 +1,6 @@
 {
   "name": "@monid/did-registry",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "description": "Package to anchor MONiD identities using registry smart contract and an IPFS gateway",
   "license": "Apache-2.0",
   "main": "build",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@decentralized-identity/did-common-typescript": "^0.1.19",
-    "@monid/registry-contract": "^1.1.0",
+    "@monid/registry-contract": "^1.1.3",
     "cross-fetch": "^3.0.6",
     "detect-node": "^2.0.4",
     "form-data": "^3.0.0"

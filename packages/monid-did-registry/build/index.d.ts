@@ -1,9 +1,9 @@
 /// <reference types="node" />
 import { IDidDocument } from '@decentralized-identity/did-common-typescript';
 import { SignatureLike } from '@monid/registry-contract';
-export declare const infura = "https://rinkeby.infura.io/v3/15d4004b3d9d4eef90898b33ba6358c8";
-export declare const monidRegistryContract = "0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160";
-export declare const monidIpfsHost = "https://ipfs.monid.io:443";
+export declare const infuraUrl: string;
+export declare const monidRegistryContract: string;
+export declare const monidIpfsHost: string;
 /**
  * Returns a configured registrar for the did:monid method
  * @param providerUri - Ethereum HTTP gateway used for reading the smart contract state and broadcasting transactions

@@ -1,11 +1,27 @@
 import { IDidDocument } from '@decentralized-identity/did-common-typescript';
 import RegistryContract, { SignatureLike } from '@monid/registry-contract';
 import { IpfsStorageAgent } from './ipfs';
+require('dotenv').config();
 
 const MONID_PUBLIC_PROFILE_TYPE = 'MONiDPublicProfile';
-export const infura = 'https://rinkeby.infura.io/v3/15d4004b3d9d4eef90898b33ba6358c8';
-export const monidRegistryContract = '0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160';
-export const monidIpfsHost = 'https://ipfs.monid.io:443';
+export const infuraUrl = process.env.INFURA_URI || '';
+export const monidRegistryContract = process.env.REGISTRY_CONTRACT_ADDRESS || '';
+export const monidIpfsHost = process.env.INFURA_IPFS_URI || '';
+
+if (infuraUrl == '') {
+  console.error('must assign INFURA_URI');
+  process.exit(1);
+}
+
+if (monidRegistryContract == '') {
+  console.error('must assign REGISTRY_CONTRACT_ADDRESS');
+  process.exit(1);
+}
+
+if (monidIpfsHost == '') {
+  console.error('must assign INFURA_IPFS_URI');
+  process.exit(1);
+}
 
 /**
  * Returns a configured registrar for the did:monid method
@@ -14,7 +30,7 @@ export const monidIpfsHost = 'https://ipfs.monid.io:443';
  * @param ipfsHost - IPFS gateway HTTPS API endpoint used for storing / reading IPFS documents, should allow for pinning
  */
 export const getRegistry = (
-  providerUrl: string = infura,
+  providerUrl: string = infuraUrl,
   contractAddress: string = monidRegistryContract,
   ipfsHost: string = monidIpfsHost
 ) => {

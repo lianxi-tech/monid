@@ -39,13 +39,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getRegistry = exports.monidIpfsHost = exports.monidRegistryContract = exports.infura = void 0;
+exports.getRegistry = exports.monidIpfsHost = exports.monidRegistryContract = exports.infuraUrl = void 0;
 var registry_contract_1 = __importDefault(require("@monid/registry-contract"));
 var ipfs_1 = require("./ipfs");
+require('dotenv').config();
 var MONID_PUBLIC_PROFILE_TYPE = 'MONiDPublicProfile';
-exports.infura = 'https://rinkeby.infura.io/v3/15d4004b3d9d4eef90898b33ba6358c8';
-exports.monidRegistryContract = '0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160';
-exports.monidIpfsHost = 'https://ipfs.monid.io:443';
+exports.infuraUrl = process.env.INFURA_URI || '';
+exports.monidRegistryContract = process.env.REGISTRY_CONTRACT_ADDRESS || '';
+exports.monidIpfsHost = process.env.INFURA_IPFS_URI || '';
+if (exports.infuraUrl == '') {
+    console.error('must assign INFURA_URI');
+    process.exit(1);
+}
+if (exports.monidRegistryContract == '') {
+    console.error('must assign REGISTRY_CONTRACT_ADDRESS');
+    process.exit(1);
+}
+if (exports.monidIpfsHost == '') {
+    console.error('must assign INFURA_IPFS_URI');
+    process.exit(1);
+}
 /**
  * Returns a configured registrar for the did:monid method
  * @param providerUri - Ethereum HTTP gateway used for reading the smart contract state and broadcasting transactions
@@ -53,7 +66,7 @@ exports.monidIpfsHost = 'https://ipfs.monid.io:443';
  * @param ipfsHost - IPFS gateway HTTPS API endpoint used for storing / reading IPFS documents, should allow for pinning
  */
 var getRegistry = function (providerUrl, contractAddress, ipfsHost) {
-    if (providerUrl === void 0) { providerUrl = exports.infura; }
+    if (providerUrl === void 0) { providerUrl = exports.infuraUrl; }
     if (contractAddress === void 0) { contractAddress = exports.monidRegistryContract; }
     if (ipfsHost === void 0) { ipfsHost = exports.monidIpfsHost; }
     var registryContract = new registry_contract_1.default(contractAddress, providerUrl);

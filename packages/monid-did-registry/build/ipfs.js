@@ -38,6 +38,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.monidIpfsStorageAgent = exports.IpfsStorageAgent = void 0;
 var utils_1 = require("./utils");
+require('dotenv').config();
+var ipfsHost = process.env.INFURA_IPFS_URI || '';
+if (ipfsHost == '') {
+    console.error('must assign INFURA_IPFS_URI');
+    process.exit(1);
+}
 /**
  * @class
  * Class abstracting all interactions with ipfs nodes
@@ -117,4 +123,4 @@ exports.IpfsStorageAgent = IpfsStorageAgent;
  * Returns a configured instance of the MONiD ipfs agent
  * @return - Instantiated IPFS agent
  */
-exports.monidIpfsStorageAgent = new IpfsStorageAgent('https://ipfs.monid.com:443');
+exports.monidIpfsStorageAgent = new IpfsStorageAgent(ipfsHost);

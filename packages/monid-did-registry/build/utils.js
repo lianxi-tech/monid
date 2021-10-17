@@ -43,6 +43,17 @@ exports.Utils = void 0;
 var detect_node_1 = __importDefault(require("detect-node"));
 var form_data_1 = __importDefault(require("form-data"));
 var cross_fetch_1 = __importDefault(require("cross-fetch"));
+require('dotenv').config();
+var ipfsProjectId = process.env.INFURA_IPFS_PROJECT_ID || '';
+var ipfsProjectSecret = process.env.INFURA_IPFS_PROJECT_SECRET || '';
+if (ipfsProjectId == '') {
+    console.error('must assign INFURA_IPFS_PROJECT_ID');
+    process.exit(1);
+}
+if (ipfsProjectSecret == '') {
+    console.error('must assign INFURA_IPFS_PROJECT_SECRET');
+    process.exit(1);
+}
 /**
  * @class
  * Class provides utility functions
@@ -82,6 +93,9 @@ var Utils = /** @class */ (function () {
                 return [2 /*return*/, cross_fetch_1.default(endpoint, {
                         method: 'POST',
                         body: data,
+                        headers: {
+                            Authorization: 'Basic ' + Buffer.from(ipfsProjectId + ":" + ipfsProjectSecret, 'binary').toString('base64'),
+                        },
                     })];
             });
         });
@@ -93,7 +107,12 @@ var Utils = /** @class */ (function () {
     Utils.getRequest = function (endpoint) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, cross_fetch_1.default(endpoint)];
+                return [2 /*return*/, cross_fetch_1.default(endpoint, {
+                        method: 'GET',
+                        headers: {
+                            Authorization: 'Basic ' + Buffer.from(ipfsProjectId + ":" + ipfsProjectSecret, 'binary').toString('base64'),
+                        },
+                    })];
             });
         });
     };

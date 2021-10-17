@@ -40,11 +40,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getPublicProfile = exports.getResolver = exports.monidIpfsHost = exports.monidRegistryContract = exports.infura = void 0;
+require('dotenv').config();
 var registry_contract_1 = __importDefault(require("@monid/registry-contract"));
 var ipfs_1 = require("./ipfs");
-exports.infura = 'https://rinkeby.infura.io/v3/15d4004b3d9d4eef90898b33ba6358c8';
-exports.monidRegistryContract = '0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160';
-exports.monidIpfsHost = 'https://ipfs.monid.io:443';
+exports.infura = process.env.INFURA_URI || '';
+exports.monidRegistryContract = process.env.REGISTRY_CONTRACT_ADDRESS || '0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160';
+exports.monidIpfsHost = process.env.IPFS_HOST || 'https://ipfs.monid.io:443';
 /**
  * Returns a configured resolver for the did:monid method
  * @param providerUri - Ethereum HTTP gateway used for reading the registry contract state and broadcasting transactions

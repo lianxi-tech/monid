@@ -1,7 +1,7 @@
 import { DIDDocument, ParsedDID, Resolver } from 'did-resolver';
-export declare const infura = "https://rinkeby.infura.io/v3/15d4004b3d9d4eef90898b33ba6358c8";
-export declare const monidRegistryContract = "0x61F36Db1849bC8F21F9A41A74b4f073D09E7F160";
-export declare const monidIpfsHost = "https://ipfs.monid.io:443";
+export declare const infura: string;
+export declare const monidRegistryContract: string;
+export declare const monidIpfsHost: string;
 /**
  * Returns a configured resolver for the did:monid method
  * @param providerUri - Ethereum HTTP gateway used for reading the registry contract state and broadcasting transactions

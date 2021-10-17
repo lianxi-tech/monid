@@ -10,7 +10,7 @@ import { parseTransaction } from 'ethers/lib/utils';
 
 jest.setTimeout(30000);
 
-describe('Test flashloan', () => {
+describe('Test smart contract', () => {
   let account: string;
   let ganacheServer: Ganache.Server;
   let contractAddress: string;

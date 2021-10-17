@@ -1,6 +1,6 @@
 {
   "name": "@monid/did-registry",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Package to anchor MONiD identities using registry smart contract and an IPFS gateway",
   "license": "Apache-2.0",
   "main": "build",

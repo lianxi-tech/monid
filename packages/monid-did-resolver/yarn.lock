@@ -1044,10 +1044,10 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@monid/registry-contract@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@monid/registry-contract/-/registry-contract-1.1.0.tgz#b0f06c704caada96e1c0b18d9fc3566af42be620"
-  integrity sha512-RgxDZp7IgT77jBMmmgC9CxdSmhPUqo/3W3NIhR7GSrFaHDbonOk+qoBEMQsGc+U8l74oezQAhS5xfYWw4vWYZw==
+"@monid/registry-contract@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@monid/registry-contract/-/registry-contract-2.0.0.tgz#d06f1d489c93a05ac76e65b51afaa095d4f47ad3"
+  integrity sha512-2t2sGyE4DBXK+7Wvui5TVFfSt86sStvVd8EK4FHkA+b+yCbzAwUlUyNRDN2Od86VDYo2S64M2SspiyxaqAJwWg==
   dependencies:
     "@truffle/hdwallet-provider" "^1.2.0"
     ethers "^5.0.21"

@@ -57,14 +57,6 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
-"@decentralized-identity/did-common-typescript@^0.1.19":
-  version "0.1.19"
-  resolved "https://registry.yarnpkg.com/@decentralized-identity/did-common-typescript/-/did-common-typescript-0.1.19.tgz#91c6dd59311e849cbc91fcff81b65c1a966163b6"
-  integrity sha512-GB3ZLXiyBmzbdur6dwqlf26+LSqeza2i5rE3sCu0vcbZ1R5+Av/vQyTZvh3zD/s4/8bdsnH942IvGu+sQqacqw==
-  dependencies:
-    base64url "^3.0.1"
-    clone "^2.1.2"
-
 "@ethersproject/abi@5.0.0-beta.153":
   version "5.0.0-beta.153"
   resolved "https://registry.yarnpkg.com/@ethersproject/abi/-/abi-5.0.0-beta.153.tgz#43a37172b33794e4562999f6e2d555b7599a8eee"
@@ -427,19 +419,17 @@
     methods "^1.1.2"
     path-to-regexp "^6.1.0"
 
-"@monid/did-resolver@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@monid/did-resolver/-/did-resolver-1.1.0.tgz#95018d48c5bf2be47bce137856f0210492f171b0"
-  integrity sha512-y37Nk9Y4Eyr5DjSsaZwSAVERCki/+A/HysryIyqsRDcGNODWdNKQliNXkb7rt7QTRmrm4dEyVAL42u7B9jkw4A==
+"@monid/did-resolver@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@monid/did-resolver/-/did-resolver-2.0.1.tgz#c6f772eab4790f18eee24843880385e4cd830d37"
+  integrity sha512-IiLz8KwygFwP7FL3U4W1c46p4AMCqTgpvneqgrYgIJBr2q5m4kjbLgaccDo577ln50bg1dTkLn084iN3eJKnmw==
   dependencies:
-    "@decentralized-identity/did-common-typescript" "^0.1.19"
-    "@monid/registry-contract" "^1.1.0"
-    cross-fetch "^3.0.6"
+    "@monid/registry-contract" "^2.0.0"
 
-"@monid/registry-contract@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@monid/registry-contract/-/registry-contract-1.1.0.tgz#b0f06c704caada96e1c0b18d9fc3566af42be620"
-  integrity sha512-RgxDZp7IgT77jBMmmgC9CxdSmhPUqo/3W3NIhR7GSrFaHDbonOk+qoBEMQsGc+U8l74oezQAhS5xfYWw4vWYZw==
+"@monid/registry-contract@^2.0.0":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@monid/registry-contract/-/registry-contract-2.0.1.tgz#310bbb11d51a8083f251b820676000be501dab32"
+  integrity sha512-1sRSyeHfUyVPBP8DJy/s4wyxbXDDNykRHYplN+hVSutJXMIw93N80Q7gS8E4XEQUxqyQun5/7IOb8W3uoo914g==
   dependencies:
     "@truffle/hdwallet-provider" "^1.2.0"
     ethers "^5.0.21"
@@ -882,11 +872,6 @@ base64-js@^1.3.1:
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
-base64url@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/base64url/-/base64url-3.0.1.tgz#6399d572e2bc3f90a9a8b22d5dbb0a32d33f788d"
-  integrity sha512-ir1UPr3dkwexU7FdV8qBBbNDRUhMmIekYMFZfi+C/sLNnRESKPl23nB9b2pltqfOQNnGzsDdId90AEtG5tCx4A==
-
 bcrypt-pbkdf@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.2.tgz#a4301d389b6a43f9b67ff3ca11a3f6637e360e9e"
@@ -1136,7 +1121,7 @@ clone-response@^1.0.2:
   dependencies:
     mimic-response "^1.0.0"
 
-clone@^2.0.0, clone@^2.1.1, clone@^2.1.2:
+clone@^2.0.0, clone@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
@@ -1253,13 +1238,6 @@ cross-fetch@^2.1.0, cross-fetch@^2.1.1:
   dependencies:
     node-fetch "2.1.2"
     whatwg-fetch "2.0.4"
-
-cross-fetch@^3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.0.6.tgz#3a4040bc8941e653e0e9cf17f29ebcd177d3365c"
-  integrity sha512-KBPUbqgFjzWlVcURG+Svp9TlhA5uliYtiNx/0r8nv0pdypeQCRJ9IaSIc3q/x3q8t3F75cHuwxVql1HFGHCNJQ==
-  dependencies:
-    node-fetch "2.6.1"
 
 crypto-browserify@3.12.0:
   version "3.12.0"
@@ -2720,11 +2698,6 @@ node-fetch@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
   integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
-
-node-fetch@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
-  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-fetch@~1.7.1:
   version "1.7.3"
